@@ -3,9 +3,8 @@ title: "Grammatical variation in *LVC* and *JSlx*"
 author: "Laurel MacKenzie & Mary Robinson"
 date: "2025-01-08"
 output: 
-  html_document:
+  pdf_document:
     toc: true
-    toc_float: true
 ---
 
 ## Setup
