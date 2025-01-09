@@ -23,7 +23,7 @@ Each row of the database contains a single grammatical variable in a single lang
 were identified for the database can be found in MacKenzie & Robinson §3.1 and §4.1.
 
 Each variable is coded for whether it comprises variation in **form**, variation in **omission**, variation in **order**, or some
-combination of these, following Mansfield et al.'s (2023:246–7) definitions of these variation types (elaborated below).
+combination of these, following Mansfield et al.'s (2023:246–7) definitions of these variation types (reproduced below).
 
 Each variable is also coded for whether its social significance was analyzed, and whether its social significance was found, across
 three domains of sociolinguistic evidence: patterns of **production**, perceptual judgments (**perception**), and 
