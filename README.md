@@ -86,6 +86,6 @@ of the variable is not mentioned in the publication.
 - **data.source**: source of data on the variable, as reported in the publication
 - **coder.notes**: coders' notes on the variable
 
-### Reference
+## Reference
 Mansfield, John, Henry Leslie-O’Neill, and Haoyi Li. 2023. Dialect differences and linguistic divergence: 
 A crosslinguistic survey of grammatical variation. *Language Dynamics and Change* 13:232–276.
