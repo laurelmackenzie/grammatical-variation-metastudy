@@ -6,7 +6,7 @@ ed. Daniel Duncan and Mary Robinson. Berlin: Mouton De Gruyter.
 In addition to this readme, the repository contains:
 
 - LVC_JSlx_gramm_var_database.csv: a database of grammatical variables in published studies in *Language Variation and Change* and 
-*Journal of Sociolinguistics* from their first year of publication to the end of 2023, annotated below
+*Journal of Sociolinguistics* from their first year of publication to the end of 2023
 - LVC_JSlx_gramm_var_database.Rmd: an R Markdown file analyzing the data
 
 The database can also be browsed at [this link](https://docs.google.com/spreadsheets/d/1VzFpmDeR5bj1UBG5qSeEpZxatuUKQS8EJiTOrf8r-1Y/edit?usp=sharing).
@@ -17,11 +17,10 @@ or submit them to Laurel by email ([laurel.mackenzie@nyu.edu](mailto:laurel.mack
 ## Database overview
 
 The database contains grammatical variables published in the sociolinguistic literature, specifically from the entire catalog (up to the
-end of 2023) of two journals, *Language Variation and Change* and 
-*Journal of Sociolinguistics*. We defined "grammatical variables," following Mansfield et al. (2023:234), as
-''grammatical meanings or functions that can be expressed in more than one way.'' Each row of the database comprises a single 
-grammatical variable in a single language variety. Further information on how variables were selected for the database can be found 
-in MacKenzie & Robinson  §3.1 and §4.1.
+end of 2023) of two journals, *Language Variation and Change* and  *Journal of Sociolinguistics*. We defined "grammatical variables,"
+following Mansfield et al. (2023:234), as ''grammatical meanings or functions that can be expressed in more than one way.'' 
+Each row of the database comprises a single  grammatical variable in a single language variety. Further information on how variables 
+were identified can be found in MacKenzie & Robinson §3.1 and §4.1.
 
 ## Database columns
 
