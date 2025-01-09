@@ -20,7 +20,7 @@ The database contains grammatical variables published in the sociolinguistic lit
 end of 2023) of two journals, *Language Variation and Change* and  *Journal of Sociolinguistics*. We defined "grammatical variables,"
 following Mansfield et al. (2023:234), as ''grammatical meanings or functions that can be expressed in more than one way.'' 
 Each row of the database comprises a single  grammatical variable in a single language variety. Further information on how variables 
-were identified can be found in MacKenzie & Robinson §3.1 and §4.1.
+were identified for the database can be found in MacKenzie & Robinson §3.1 and §4.1.
 
 ## Database columns
 
@@ -33,7 +33,7 @@ were identified can be found in MacKenzie & Robinson §3.1 and §4.1.
 - **variable**: variable, as named and exemplified by the author(s)
 - **variety**: variety in which the variable was studied, as named by the author(s)
 - **language**: language in which the variable was studied, as named by the author(s)
-- **variation.type**: one or more of the following options, following Mansfield et al. (2023):
-  - Form: Variants have the same structure, but are distinguished by the form of a grammatical marker (either affix, clitic, or function word).
-  - (b) Order: Variants use the same lexical and grammatical elements, but are distinguished by linear ordering.
-  - (c) Omission: Variants are identical except that a grammatical marker is present in one but absent in the other. (Mansfield et al. 2023:246–7)
+- **variation.type**: one or more of the following options, as applicable, following Mansfield et al. (2023):
+  - **form**: Variants have the same structure, but are distinguished by the form of a grammatical marker (either affix, clitic, or function word).
+  - **omission**: Variants are identical except that a grammatical marker is present in one but absent in the other.
+  - **order**: Variants use the same lexical and grammatical elements, but are distinguished by linear ordering. (Mansfield et al. 2023:246–7)
