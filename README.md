@@ -57,14 +57,14 @@ Detailed descriptions of the database columns follow.
 - **production**: the extent to which social significance is found for the variable in the domain of production:
   - **not analyzed**: social significance is not analyzed for the variable in production
   - **null**: social significance is analyzed for the variable in production, but not found (i.e. the publication reports 
-  [a] null social result[s] for the variable in production)
+  a null result for the variable in production)
   - **x**: social significance is analyzed for the variable in production and found
 - **production.details**: coders' notes on the specifics of the social significance in production. NA if social
 significance in production is not analyzed in the publication.
 - **perception**: the extent to which social significance is found for the variable in the domain of perception:
   - **not analyzed**: social significance is not analyzed for the variable in perception
   - **null**: social significance is analyzed for the variable in perception, but not found (i.e. the publication reports 
-  [a] null social result[s] for the variable in perception)
+  a null result for the variable in perception)
   - **x**: social significance is analyzed for the variable in perception and found
 - **perception.details**: coders' notes on the specifics of the social significance in perception. NA if social
 significance in perception is not analyzed in the publication.
@@ -72,7 +72,7 @@ significance in perception is not analyzed in the publication.
 metalinguistic behaviors:
   - **not analyzed**: social significance is not analyzed for the variable in metalinguistic behaviors
   - **null**: social significance is analyzed for the variable in metalinguistic behaviors, but not found (i.e. the publication reports 
-  [a] null social result[s] for the variable in metalinguistic behaviors)
+  a null result for the variable in metalinguistic behaviors)
   - **x**: social significance is analyzed for the variable in metalinguistic behaviors and found
 - **metalinguistic behaviors.details**: coders' notes on the specifics of the social significance in metalinguistic behaviors. NA
 if social significance in metalinguistic behaviors is not analyzed in the publication.
