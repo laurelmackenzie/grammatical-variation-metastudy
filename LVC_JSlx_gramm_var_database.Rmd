@@ -1,0 +1,344 @@
+---
+title: "Grammatical variation in *LVC* and *JSlx*"
+author: "Laurel MacKenzie & Mary Robinson"
+date: "2025-01-08"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Setup
+
+Load packages and data file
+
+```{r load, message = FALSE}
+library(here)
+library(tidyverse)
+library(knitr)
+
+gramm_var <- read_csv(here("LVC_JSlx_gramm_var_database.csv"))
+```
+
+Recode variation type as follows:
+
+  - Recode "form", "omission", and "form, omission" as *realization*
+    - From the paper: *We group together form and omission variables, seeing omission as simply a subtype of form: that is, omission is the alternation of a form with zero, as opposed to its alternation with another overt form. This decision is strengthened by Mansfield’s et al. lack of a significant difference in social distance effects between form and omission variables, suggesting that the social patterning of the two is not meaningfully different in their data.*
+  - Recode "form, order", "omission, order", and "form, omission, order" as *both* since they involve both realization and order
+
+```{r variation-type-recode}
+gramm_var <- gramm_var %>% 
+  mutate(
+  variation.type.recode = case_when(
+    str_detect(variation.type, ", order") ~ "both",
+    str_detect(variation.type, "form") | str_detect(variation.type, "omission") ~ "realization",
+    .default = as.character(variation.type)
+  )
+)
+table(gramm_var$variation.type.recode)
+```
+
+## §4.2 Social significance of variation in realization
+
+Number of variables between the two journals that we classified as variation in **realization** (including variables classified as involving both realization and order simultaneously):
+
+```{r realization-variables}
+realization <- gramm_var %>% 
+  filter(variation.type.recode == "realization" | variation.type.recode == "both")
+
+(realization_n <- realization %>% nrow())
+```
+
+Breakdown of realization variables by journal:
+```{r realization-variables-by-journal}
+realization %>% 
+  count(journal)
+```
+
+Narrowing down the data to only those realization variables for which the researcher(s) **looked for social patterning** of any kind:
+```{r realization-variables-social-analyzed}
+realization_social_analyzed <- realization %>% 
+  filter(social.significance == "x" | social.significance == "null")
+
+(realization_social_analyzed_n <- realization_social_analyzed %>% 
+  nrow())
+
+realization_social_analyzed_n/realization_n
+```
+
+### Table 1
+
+Number of realization variables in *LVC* and *JSlx* publications for which social factors were analyzed, and found to have an effect, in the domain of **production**:
+```{r realization-variables-social-analyzed-production}
+realization_social_analyzed_production <- realization_social_analyzed %>% 
+  filter(production == "x" | production == "null")
+
+(realization_social_analyzed_production_n <- realization_social_analyzed_production %>% 
+  nrow())
+
+realization_social_found_production <- realization_social_analyzed %>% 
+  filter(production == "x")
+
+(realization_social_found_production_n <- realization_social_found_production %>% 
+  nrow())
+
+realization_social_found_production_n/realization_social_analyzed_production_n
+```
+
+Number of realization variables in *LVC* and *JSlx* publications for which social factors were analyzed, and found to have an effect, in the domain of **perception**:
+```{r realization-variables-social-analyzed-perception}
+realization_social_analyzed_perception <- realization_social_analyzed %>% 
+  filter(perception == "x" | perception == "null")
+
+(realization_social_analyzed_perception_n <- realization_social_analyzed_perception %>% 
+  nrow())
+
+realization_social_found_perception <- realization_social_analyzed %>% 
+  filter(perception == "x")
+
+(realization_social_found_perception_n <- realization_social_found_perception %>% 
+  nrow())
+
+realization_social_found_perception_n/realization_social_analyzed_perception_n
+```
+
+Number of realization variables in *LVC* and *JSlx* publications for which social factors were analyzed, and found to have an effect, in the domain of **metalinguistic behaviors**:
+```{r realization-variables-social-analyzed-metalx}
+realization_social_analyzed_metalx <- realization_social_analyzed %>% 
+  filter(metalinguistic.behaviors == "x" | metalinguistic.behaviors == "null")
+
+(realization_social_analyzed_metalx_n <- realization_social_analyzed_metalx %>% 
+  nrow())
+
+realization_social_found_metalx <- realization_social_analyzed %>% 
+  filter(metalinguistic.behaviors == "x")
+
+(realization_social_found_metalx_n <- realization_social_found_metalx %>% 
+  nrow())
+
+realization_social_found_metalx_n/realization_social_analyzed_metalx_n
+```
+
+### Table 2
+
+Number of realization variables in *LVC* and *JSlx* publications for which social factors were found to have an effect, and which are implicated on an overt prestige/stigma axis, in the domain of **production**:
+```{r realization-variables-social-production-stigma-prestige}
+realization_social_found_production_overt_sp <- realization_social_found_production %>%
+  filter(overt.prestige.or.stigma == "x")
+
+(realization_social_found_production_overt_sp_n <- realization_social_found_production_overt_sp %>% 
+  nrow())
+
+realization_social_found_production_overt_sp_n/realization_social_found_production_n
+```
+
+Number of realization variables in *LVC* and *JSlx* publications for which social factors were found to have an effect, and which are implicated on an overt prestige/stigma axis, in the domain of **perception**:
+```{r realization-variables-social-perception-stigma-prestige}
+realization_social_found_perception_overt_sp <- realization_social_found_perception %>% 
+  filter(overt.prestige.or.stigma == "x")
+
+(realization_social_found_perception_overt_sp_n <- realization_social_found_perception_overt_sp %>% 
+  nrow())
+
+realization_social_found_perception_overt_sp_n/realization_social_found_perception_n
+```
+
+Number of realization variables in *LVC* and *JSlx* publications for which social factors were found to have an effect, and which are implicated on an overt prestige/stigma axis, in the domain of **metalinguistic behaviors**:
+```{r realization-variables-social-metalx-stigma-prestige}
+realization_social_found_metalx_overt_sp <- realization_social_found_metalx %>%
+  filter(overt.prestige.or.stigma == "x")
+
+(realization_social_found_metalx_overt_sp_n <- realization_social_found_metalx_overt_sp %>% 
+  nrow())
+
+realization_social_found_metalx_overt_sp_n/realization_social_found_metalx_n
+```
+
+## §4.3 Social significance of variation in order
+
+Number of variables between the two journals that we classified as variation in **order** (including variables classified as involving both realization and order simultaneously):
+
+```{r order-variables}
+order <- gramm_var %>% 
+  filter(variation.type.recode == "order" | variation.type.recode == "both")
+
+(order_n <- order %>% 
+  nrow())
+```
+
+Breakdown of order variables by journal:
+```{r order-variables-by-journal}
+order %>% 
+  count(journal)
+```
+
+Narrowing down the data to only those order variables for which the researcher(s) **looked for social patterning** of any kind:
+```{r order-variables-social-analyzed}
+order_social_analyzed <- order %>% 
+  filter(social.significance == "x" | social.significance == "null")
+
+(order_social_analyzed_n <- order_social_analyzed %>% 
+  nrow())
+
+order_social_analyzed_n/order_n
+```
+
+### Table 3
+
+Number of order variables in *LVC* and *JSlx* publications for which social factors were analyzed, and found to have an effect, in the domain of **production**:
+```{r order-variables-social-analyzed-production}
+order_social_analyzed_production <- order_social_analyzed %>% 
+  filter(production == "x" | production == "null")
+
+(order_social_analyzed_production_n <- order_social_analyzed_production %>% 
+  nrow())
+
+order_social_found_production <- order_social_analyzed %>% 
+  filter(production == "x")
+
+(order_social_found_production_n <- order_social_found_production %>% 
+  nrow())
+
+order_social_found_production_n/order_social_analyzed_production_n
+```
+
+Number of order variables in *LVC* and *JSlx* publications for which social factors were analyzed, and found to have an effect, in the domain of **perception**:
+```{r order-variables-social-analyzed-perception}
+order_social_analyzed_perception <- order_social_analyzed %>% 
+  filter(perception == "x" | perception == "null")
+
+(order_social_analyzed_perception_n <- order_social_analyzed_perception %>% 
+  nrow())
+
+order_social_found_perception <- order_social_analyzed %>% 
+  filter(perception == "x")
+
+(order_social_found_perception_n <- order_social_found_perception %>% 
+  nrow())
+
+order_social_found_perception_n/order_social_analyzed_perception_n
+```
+
+Number of order variables in *LVC* and *JSlx* publications for which social factors were analyzed, and found to have an effect, in the domain of **metalinguistic behaviors**:
+```{r order-variables-social-analyzed-metalx}
+order_social_analyzed_metalx <- order_social_analyzed %>% 
+  filter(metalinguistic.behaviors == "x" | metalinguistic.behaviors == "null")
+
+(order_social_analyzed_metalx_n <- order_social_analyzed_metalx %>% 
+  nrow())
+
+order_social_found_metalx <- order_social_analyzed %>% 
+  filter(metalinguistic.behaviors == "x")
+
+(order_social_found_metalx_n <- order_social_found_metalx %>% 
+  nrow())
+
+order_social_found_metalx_n/order_social_analyzed_metalx_n
+```
+
+Compare the rate of social conditioning shown by **order variables in production** to the rate of social conditioning shown by **realization variables in production**:
+```{r social-production-comparison}
+order_social_production <- c(order_social_found_production_n, order_social_analyzed_production_n - order_social_found_production_n)
+
+realization_social_production <- c(realization_social_found_production_n, realization_social_analyzed_production_n - realization_social_found_production_n)
+
+fisher.test(cbind(order_social_production, realization_social_production))
+```
+
+### Table 4
+
+Number of order variables in *LVC* and *JSlx* publications for which social factors were found to have an effect, and which are implicated on an overt prestige/stigma axis, in the domain of **production**:
+```{r order-variables-social-production-stigma-prestige}
+order_social_found_production_overt_sp <- order_social_found_production %>% 
+  filter(overt.prestige.or.stigma == "x")
+
+(order_social_found_production_overt_sp_n <- order_social_found_production_overt_sp %>% 
+  nrow())
+
+order_social_found_production_overt_sp_n/order_social_found_production_n
+```
+
+Number of order variables in *LVC* and *JSlx* publications for which social factors were found to have an effect, and which are implicated on an overt prestige/stigma axis, in the domain of **perception**:
+```{r order-variables-social-perception-stigma-prestige}
+order_social_found_perception_overt_sp <- order_social_found_perception %>%
+  filter(overt.prestige.or.stigma == "x")
+
+(order_social_found_perception_overt_sp_n <- order_social_found_perception_overt_sp %>% 
+  nrow())
+
+order_social_found_perception_overt_sp_n/order_social_found_perception_n
+```
+
+Number of order variables in *LVC* and *JSlx* publications for which social factors were found to have an effect, and which are implicated on an overt prestige/stigma axis, in the domain of **metalinguistic behaviors**:
+```{r order-variables-social-metalx-stigma-prestige}
+order_social_found_metalx_overt_sp <- order_social_found_metalx %>% 
+  filter(overt.prestige.or.stigma == "x")
+
+(order_social_found_metalx_overt_sp_n <- order_social_found_metalx_overt_sp %>% 
+  nrow())
+
+order_social_found_metalx_overt_sp_n/order_social_found_metalx_n
+```
+
+## §5 General discussion
+
+Narrow down the data to **realization** variables studied from a **production** angle, and **compare the two journals** on the proportion of papers that found social significance out of those that looked for it:
+```{r realization-production-journal-comparison}
+
+
+realization_social_found_production_LVC <- realization_social_found_production %>% 
+  filter(journal == "LVC")
+
+(realization_social_found_production_LVC_n <- realization_social_found_production_LVC %>% 
+  nrow())
+
+realization_social_analyzed_production_LVC <-  realization_social_analyzed_production %>% 
+  filter(journal == "LVC")
+
+(realization_social_analyzed_production_LVC_n <- realization_social_analyzed_production_LVC %>% 
+  nrow())
+
+realization_social_found_production_LVC_n/realization_social_analyzed_production_LVC_n
+
+realization_social_production_LVC <- c(realization_social_found_production_LVC_n, realization_social_analyzed_production_LVC_n - realization_social_found_production_LVC_n)
+
+realization_social_found_production_JSlx <- realization_social_found_production %>% 
+  filter(journal == "JSlx")
+
+(realization_social_found_production_JSlx_n <- realization_social_found_production_JSlx %>% 
+  nrow())
+
+realization_social_analyzed_production_JSlx <-  realization_social_analyzed_production %>% 
+  filter(journal == "JSlx")
+
+(realization_social_analyzed_production_JSlx_n <- realization_social_analyzed_production_JSlx %>% 
+  nrow())
+
+realization_social_found_production_JSlx_n/realization_social_analyzed_production_JSlx_n
+
+realization_social_production_JSlx <- c(realization_social_found_production_JSlx_n, realization_social_analyzed_production_JSlx_n - realization_social_found_production_JSlx_n)
+
+chisq.test(cbind(realization_social_production_LVC, realization_social_production_JSlx), correct = FALSE)
+```
+
+Of the variables in our sample, what proportion come from English or another major European language?
+
+```{r language}
+(gramm_var_n <- gramm_var %>% 
+  nrow())
+
+(English_n <- gramm_var %>% 
+  filter(language == "English") %>% 
+  nrow())
+
+English_n/gramm_var_n
+
+(other_Euro_n <- gramm_var %>% 
+  filter(language == "French" | language == "Spanish" | language == "Portuguese") %>% 
+  nrow())
+
+other_Euro_n/gramm_var_n
+
+gramm_var_n-English_n-other_Euro_n
+```
+
