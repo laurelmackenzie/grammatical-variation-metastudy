@@ -77,7 +77,7 @@ metalinguistic behaviors:
 - **metalinguistic behaviors.details**: coders' notes on the specifics of the social significance in metalinguistic behaviors. NA
 if social significance in metalinguistic behaviors is not analyzed in the publication.
 - **overt.prestige.or.stigma**: the extent to which the variable is reported in the publication to be the target of 
-**overt prestige/overt stigma**:
+overt prestige/overt stigma:
   - **not mentioned**: the publication contains no mention of whether the variable is the target of overt prestige/stigma
   - **null**: the publication explicitly mentions that the variable is not the target of overt prestige/stigma
   - **x**: the publication explicitly mentions that the variable is the target of overt prestige/stigma
