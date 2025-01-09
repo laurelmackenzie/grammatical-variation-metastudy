@@ -34,29 +34,54 @@ the target of **overt prestige/overt stigma**.
 
 Detailed descriptions of the database columns follow.
 
-
 ## Database columns
 
 - **journal**: journal of publication: LVC (*Language Variation and Change*) or JSlx (*Journal of Sociolinguistics*)
 - **issue**: volume(number) of publication
 - **year**: year of publication
-- **author.s.lastnames**: last name(s) of author(s)
+- **author.s.lastnames**: last name(s) of author(s) of publication
 - **title**: title of publication
 - **link**: link to publication
-- **variable**: variable, as named and exemplified by the author(s)
-- **variety**: variety in which the variable was studied, as named by the author(s)
-- **language**: language in which the variable was studied, as named by the author(s)
+- **variable**: variable, as named and exemplified in the publication
+- **variety**: variety in which the variable was studied, as named in the publication
+- **language**: language in which the variable was studied, as named in the publication
 - **variation.type**: one or more of the following options, as applicable, following Mansfield et al. (2023):
-  - **form**: variants have the same structure, but are distinguished by the form of a grammatical marker (either affix, clitic, or function word).
-  - **omission**: variants are identical except that a grammatical marker is present in one but absent in the other.
-  - **order**: variants use the same lexical and grammatical elements, but are distinguished by linear ordering. (Mansfield et al. 2023:246–7)
-- **social.significance**: the extent to which social significance was analyzed for the variable:
-  - **not analyzed**: social significance was not analyzed for the variable in any domain
-  - **null**: social significance was analyzed for the variable in some domain(s), but not found (i.e. the paper reported only 
+  - **form**: variants have the same structure, but are distinguished by the form of a grammatical marker (either affix, clitic, or function word)
+  - **omission**: variants are identical except that a grammatical marker is present in one but absent in the other
+  - **order**: variants use the same lexical and grammatical elements, but are distinguished by linear ordering (Mansfield et al. 2023:246–7)
+- **social.significance**: the extent to which social significance is found for the variable in the publication:
+  - **not analyzed**: social significance is not analyzed for the variable in any domain
+  - **null**: social significance is analyzed for the variable in some domain(s), but not found (i.e. the publication reports only 
   [a] null social result[s] for the variable)
-  - **x**: social significance was analyzed for the variable in some domain(s) and found
-- **production**: the extent to which social significance was analyzed for the variable in the domain of production:
-  - **not analyzed**: social significance was not analyzed for the variable in any domain
-  - **null**: social significance was analyzed for the variable in some domain(s), but not found (i.e. the paper reported only 
-  [a] null social result[s] for the variable)
-  - **x**: social significance was analyzed for the variable in some domain(s) and found
+  - **x**: social significance is analyzed for the variable in some domain(s) and found
+- **production**: the extent to which social significance is found for the variable in the domain of production:
+  - **not analyzed**: social significance is not analyzed for the variable in production
+  - **null**: social significance is analyzed for the variable in production, but not found (i.e. the publication reports 
+  [a] null social result[s] for the variable in production)
+  - **x**: social significance is analyzed for the variable in production and found
+- **production.details**: coders' notes on the specifics of the social significance in production. NA if social
+significance in production is not analyzed in the publication.
+- **perception**: the extent to which social significance is found for the variable in the domain of perception:
+  - **not analyzed**: social significance is not analyzed for the variable in perception
+  - **null**: social significance is analyzed for the variable in perception, but not found (i.e. the publication reports 
+  [a] null social result[s] for the variable in perception)
+  - **x**: social significance is analyzed for the variable in perception and found
+- **perception.details**: coders' notes on the specifics of the social significance in perception. NA if social
+significance in perception is not analyzed in the publication.
+- **metalinguistic behaviors**: the extent to which social significance is found for the variable in the domain of
+metalinguistic behaviors:
+  - **not analyzed**: social significance is not analyzed for the variable in metalinguistic behaviors
+  - **null**: social significance is analyzed for the variable in metalinguistic behaviors, but not found (i.e. the publication reports 
+  [a] null social result[s] for the variable in metalinguistic behaviors)
+  - **x**: social significance is analyzed for the variable in metalinguistic behaviors and found
+- **metalinguistic behaviors.details**: coders' notes on the specifics of the social significance in metalinguistic behaviors. NA
+if social significance in metalinguistic behaviors is not analyzed in the publication.
+- **overt.prestige.or.stigma**: the extent to which the variable is reported in the publication to be the target of 
+**overt prestige/overt stigma**:
+  - **not mentioned**: the publication contains no mention of whether the variable is the target of overt prestige/stigma
+  - **null**: the publication explicitly mentions that the variable is not the target of overt prestige/stigma
+  - **x**: the publication explicitly mentions that the variable is the target of overt prestige/stigma
+- **overt.prestige.or.stigma.details**: coders' notes on the specifics of the overt prestige/stigma. NA if overt prestige/stigma
+of the variable is not mentioned in the publication.
+- **data.source**: source of data on the variable, as reported in the publication
+- **coder.notes**: coders' notes on the variable
