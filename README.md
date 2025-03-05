@@ -1,7 +1,7 @@
 This repository contains files supporting the paper
 
-> MacKenzie, Laurel, and Mary Robinson. To appear. Spelling out grammatical variation. In *Sociosyntax: Current Approaches*, 
-ed. Daniel Duncan and Mary Robinson. Berlin: Mouton De Gruyter.
+> [MacKenzie, Laurel, and Mary Robinson. To appear. Spelling out grammatical variation. In *Sociosyntax: Current Approaches*, 
+ed. Daniel Duncan and Mary Robinson. Berlin: Mouton De Gruyter.](https://www.laurelmackenzie.com/publication/to-appear-mackenzie-robinson.pdf)
 
 In addition to this readme, the repository contains:
 
@@ -20,7 +20,7 @@ The database contains grammatical variables published in the sociolinguistic lit
 end of 2023) of two journals, *Language Variation and Change* and  *Journal of Sociolinguistics*. We defined "grammatical variables,"
 following Mansfield et al. (2023:234), as "grammatical meanings or functions that can be expressed in more than one way." 
 Each row of the database contains a single grammatical variable in a single language variety. Further information on how variables 
-were identified for the database can be found in MacKenzie & Robinson §3.1 and §4.1.
+were identified for the database can be found in [MacKenzie & Robinson](https://www.laurelmackenzie.com/publication/to-appear-mackenzie-robinson.pdf) §3.1 and §4.1.
 
 Each variable is coded for whether it comprises variation in **form**, variation in **omission**, variation in **order**, or some
 combination of these, following Mansfield et al.'s (2023:246–7) definitions of these variation types (reproduced below).
