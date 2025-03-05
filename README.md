@@ -18,7 +18,7 @@ or submit them to Laurel by email ([laurel.mackenzie@nyu.edu](mailto:laurel.mack
 
 The database contains grammatical variables published in the sociolinguistic literature, specifically from the entire catalog (up to the
 end of 2023) of two journals, *Language Variation and Change* and  *Journal of Sociolinguistics*. We defined "grammatical variables,"
-following Mansfield et al. (2023:234), as ''grammatical meanings or functions that can be expressed in more than one way.'' 
+following Mansfield et al. (2023:234), as "grammatical meanings or functions that can be expressed in more than one way." 
 Each row of the database contains a single grammatical variable in a single language variety. Further information on how variables 
 were identified for the database can be found in MacKenzie & Robinson §3.1 and §4.1.
 
