@@ -1,7 +1,7 @@
 This repository contains files supporting the paper
 
-> [MacKenzie, Laurel, and Mary Robinson. To appear. Spelling out grammatical variation. In *Sociosyntax: Current Approaches*, 
-ed. Daniel Duncan and Mary Robinson. Berlin: Mouton De Gruyter.](https://www.laurelmackenzie.com/publication/to-appear-mackenzie-robinson.pdf)
+> [MacKenzie, Laurel, and Mary Robinson. 2025. Spelling out grammatical variation. In *English Sociosyntax: Theory, Evidence, Approaches*, 
+ed. Daniel Duncan and Mary Robinson, 59--95. Berlin: De Gruyter Mouton.](https://www.laurelmackenzie.com/publication/2025-mackenzie-robinson/2025-mackenzie-robinson.pdf)
 
 In addition to this readme, the repository contains:
 
